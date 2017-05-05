@@ -7,7 +7,7 @@ int main()
 	char string_input_user[MAX_PATH];
 
 	printf("Enter path: ");
-	input(string_input_user);
+	printf("Path: %s\n", input(string_input_user));
 
 	return 0;
 }

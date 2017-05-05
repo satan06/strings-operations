@@ -4,7 +4,7 @@ BIN_DIR := bin/
 SRC_DIR := src/
 TARGET:= strings
 TARGET := $(addprefix $(BIN_DIR), $(TARGET))
-SRC := main.c opert.c 
+SRC := main.c opert.c strings.c
 SRC := $(addprefix $(SRC_DIR), $(SRC))
 
 all: $(TARGET)

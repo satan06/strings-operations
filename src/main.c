@@ -8,6 +8,12 @@ int main()
 
 	printf("Enter path: ");
 	printf("Path: %s\n", input(string_input_user));
+	
+	if (check(string_input_user) != -1) {
+		printf("Data correct\n");
+	} else {
+		printf("Data incorrect\n");
+	}
 
 	return 0;
-}
+} 

@@ -2,5 +2,6 @@
 #define OPERT_H
 
 char *input(char string_input[MAX_PATH]);
+int check(char string_input[MAX_PATH]);
 
 #endif//OPERT H

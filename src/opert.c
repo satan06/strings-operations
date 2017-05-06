@@ -1,5 +1,6 @@
 #define MAX_PATH 260
 #include <stdio.h>
+#include <strings.h>
 
 char *input(char string_input[MAX_PATH])
 {
@@ -8,3 +9,13 @@ char *input(char string_input[MAX_PATH])
     return string_input;
 }
 
+int check(char string_input[MAX_PATH])
+{
+	char item = '*';
+
+	if ((MAX_PATH > 260) || (sspn(string_input, item) == -1)) {
+		return -1;
+	} else {
+		return 0;
+	}
+}

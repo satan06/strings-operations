@@ -48,24 +48,5 @@ char *c_upper(char *i_str)
 	}
 }
 
-char *stok(char *i_str, char *div_str)
-{
-	int length = slen(div_str), i, j, k = 0;
-	char *r_str;
 
-	for(i = 0, j = 0; slen(div_str); i++, j++)
-		if(i_str[i] == div_str[j])
-		{
-			k++;
-		}
-    if (length == k)
-    { 
-		for(int l = 0, m = 0; l < (i + 1); l++, m++)
-		{
-		      r_str[l] = i_str[m];
-        }
-        return r_str;
-    }
-	return NULL;
-}
 

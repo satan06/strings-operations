@@ -7,12 +7,14 @@ int main()
 	char string_input_user[MAX_PATH];
 
 	printf("Enter path: ");
-	printf("Path: %s\n", input(string_input_user));
+	input(string_input_user);
 	
-	if (check(string_input_user) != -1) {
-		printf("Data correct\n");
+	if (check(string_input_user) == -2) {
+		printf("Symbol limit exceeded!\n");
+	} else if(check(string_input_user) == -1) {
+		printf("Detected forbidden symbols!\n");
 	} else {
-		printf("Data incorrect\n");
+		printf("Path: %s\n", string_input_user);
 	}
 
 	return 0;

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <strings.h>
 
 int sspn_alpha(const char* i_str, char item)
 {
@@ -20,3 +21,19 @@ int slen(const char *str)
     return length;
 }
 
+int sspn(const char *i_str)
+{
+    char f_str[] = {':', '*', '?', '"', '<', '>', '|'};
+    
+    for (int i = 0; i_str[i] != '\0'; i++) {
+        for (int k = 0; k < slen(f_str); k++) {
+            if ((i_str[i] == f_str[0]) && (i_str[i + 1] == '\\')) {
+                continue;
+            }
+            if (i_str[i] == f_str[k]) {
+                return -1;
+            }
+        }
+    }
+    return 0;
+}

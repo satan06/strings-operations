@@ -37,3 +37,14 @@ int sspn(const char *i_str)
     }
     return 0;
 }
+
+char *c_upper(char *i_str)
+{
+	for (int i = 0; i_str[i] != '\0'; i++) {
+    	if ('a' <= i && i <= 'z') {
+      		i += 'A' - 'a';
+    	}
+    	return i_str;		
+	}
+}
+

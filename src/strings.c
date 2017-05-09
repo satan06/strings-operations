@@ -40,11 +40,14 @@ int sspn(const char *i_str)
 
 char *c_upper(char *i_str)
 {
-	for (int i = 0; i_str[i] != '\0'; i++) {
-    	if ('a' <= i && i <= 'z') {
-      		i += 'A' - 'a';
-    	}
-    	return i_str;		
+	if(i_str != NULL) {
+		for (int i = 0; i_str[i] != '\0'; i++) {
+    		if ('a' <= i_str[i] && i_str[i] <= 'z') {
+      			i_str[i] += 'A' - 'a';
+    		}		
+		}
+		return i_str;
 	}
+	return NULL;
 }
 

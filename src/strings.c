@@ -1,12 +1,22 @@
 #include <stdio.h>
 
-int sspn(const char* f_str, char item)
+int sspn_alpha(const char* i_str, char item)
 {
-    for( ; *f_str; ++f_str ) {
-        if( *f_str == item ) 
-        	break;
-
+    for( ; *i_str; ++i_str ) {
+        if( *i_str == item ) 
         	return -1;
     }
     return 0;
 }
+
+int slen(const char *str) 
+{   
+    int length = 0;
+    
+    while(*str != '\0') {
+        ++length;
+        ++str;
+    }
+    return length;
+}
+

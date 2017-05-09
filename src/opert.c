@@ -11,9 +11,7 @@ char *input(char string_input[MAX_PATH])
 
 int check(char string_input[MAX_PATH])
 {
-	char item = '*';
-
-	if ((MAX_PATH > 260) || (sspn(string_input, item) == -1)) {
+	if ((MAX_PATH > 260) || (sspn(string_input) == -1)) {
 		return -1;
 	} else {
 		return 0;

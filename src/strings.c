@@ -48,5 +48,24 @@ char *c_upper(char *i_str)
 	}
 }
 
+char *stok_a(char *str, char div_s, int m_tok, int m_len)
+{
+    int k = 0, i = 0;
+    char (*p_str)[m_tok][m_len], t_str[m_tok][m_len];
+    p_str = &t_str;
 
+    while(*str != '\0') {
+        if(*str != div_s) {
+            *p_str[k][i] = *str;
+            i++;
+        } else {
+            *p_str[k][i] = '\0';
+            k++;
+            i = 0;
+        }
+    }
+    *p_str[k][i] = '\0';
+
+    return **p_str;
+}
 

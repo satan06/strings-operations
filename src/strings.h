@@ -7,5 +7,6 @@ int sspn(const char *i_str);
 char *c_upper(char *i_str);
 char *stok_a(char *str, char div_s, int m_tok, int m_len);
 char **stok_b(char *str, char **t_str, char div_s);
+char *scpy(char *n_str, const char *i_str);
 
 #endif//STRINGS H

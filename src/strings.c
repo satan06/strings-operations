@@ -69,3 +69,21 @@ char *stok_a(char *str, char div_s, int m_tok, int m_len)
     return **p_str;
 }
 
+char **stok_b(char *str, char **t_str, char div_s)
+{
+    int k = 0, i = 0;
+
+    while(*str != '\0') {
+        if(*str != div_s) {
+            t_str[k][i] = *str;
+            i++;
+        } else {
+            t_str[k][i] = '\0';
+            k++;
+            i = 0;
+        }
+    }
+    t_str[k][i] = '\0';
+
+    return t_str;
+}

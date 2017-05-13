@@ -19,3 +19,16 @@ int check(char *string_input)
 
 	return 0;
 }
+
+char *process(char *string_input, char item) 
+{
+	if(string_input != NULL) {
+		for(int i = slen(string_input); string_input[i] != item; i--) {
+    		if ('a' <= string_input[i] && string_input[i] <= 'z') {
+      			string_input[i] += 'A' - 'a';
+    		}		
+    	}
+		return string_input;
+	}
+	return NULL;
+}

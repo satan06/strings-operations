@@ -14,8 +14,9 @@ int main()
 	} else if(check(string_input_user) == -1) {
 		printf("Detected forbidden symbols!\n");
 	} else {
-		printf("Path: %s\n", string_input_user);
-		printf("Updated path: %s\n", process(string_input_user, '/'));
+		//printf("Path: %s\n", string_input_user);
+		printf("Updated path: /");
+		process(string_input_user);
 	}
 
 	return 0;

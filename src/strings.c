@@ -82,7 +82,7 @@ char *scpy(char *n_str, const char *i_str)
     while(*i_str) {
         *n_str++ = *i_str++;    
     } 
-    ++*n_str = '\0';
+    *n_str++ = '\0';
     
     return n_str;
 }

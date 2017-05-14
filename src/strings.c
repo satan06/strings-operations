@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <strings.h>
 
-int sspn_alpha(const char* i_str, char item)
+char *schr(const char *str, const char item)
 {
-    for( ; *i_str; ++i_str ) {
-        if( *i_str == item ) 
-        	return -1;
+    while (*str && *str != item) {
+        ++str;
     }
-    return 0;
+    return (*str) ? (char *) str : NULL;
 }
 
 int slen(const char *str) 
@@ -48,44 +47,31 @@ char *c_upper(char *i_str)
 	}
 }
 
-char *stok_a(char *str, char div_s, int m_tok, int m_len)
+char *sstok(char *str, const char *delim) 
 {
-    int k = 0, i = 0;
-    char (*p_str)[m_tok][m_len], t_str[m_tok][m_len];
-    p_str = &t_str;
-
-    while(*str != '\0') {
-        if(*str != div_s) {
-            *p_str[k][i] = *str;
-            i++;
-        } else {
-            *p_str[k][i] = '\0';
-            k++;
-            i = 0;
+    static char *buffer;
+    
+    if (str) {
+        buffer = str;
+        while (*buffer && schr(delim, *buffer)) {
+            *buffer++ = '\0';
         }
     }
-    *p_str[k][i] = '\0';
-
-    return **p_str;
-}
-
-char **stok_b(char *str, char **t_str, char div_s)
-{
-    int k = 0, i = 0;
-
-    while(*str != '\0') {
-        if(*str != div_s) {
-            t_str[k][i] = *str;
-            i++;
-        } else {
-            t_str[k][i] = '\0';
-            k++;
-            i = 0;
-        }
+    
+    if (! *buffer) {
+        return NULL;
     }
-    t_str[k][i] = '\0';
-
-    return t_str;
+    
+    str = buffer;
+     
+    while (*buffer && ! schr(delim, *buffer)) {
+        ++buffer;
+    }
+    while (*buffer && schr(delim, *buffer)) {
+        *buffer++ = '\0';
+    }
+    
+    return str;
 }
 
 char *scpy(char *n_str, const char *i_str)

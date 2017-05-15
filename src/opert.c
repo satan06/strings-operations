@@ -13,7 +13,7 @@ char *input(char *string_input)
     return string_input;
 }
 
-int check(char *string_input)
+int check(const char *string_input)
 {
 	if (slen(string_input) > MAX_PATH) {
 		return -2;
@@ -31,7 +31,7 @@ char *process(char *string_input)
 
 	if(string_input != NULL) {
 		if(schr(string_input, '/')) {
-			if(schr(string_input, '/') && schr(string_input, '\\')) {
+			if(schr(string_input, '/') && schr(string_input, '\\') && (sspn_l(string_input) == -1)) {
 
 				return NULL;
 

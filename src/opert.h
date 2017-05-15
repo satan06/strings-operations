@@ -3,6 +3,7 @@
 
 char *input(char *string_input);
 int check(char *string_input);
-char *process(char *string_input);
+char *process(char *string_input); 
+void output(char *string_input);
 
 #endif//OPERT H

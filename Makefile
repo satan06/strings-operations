@@ -16,7 +16,7 @@ build/src/opert.o: src/opert.c
 		$(CC) -std=c99 -I src $(CFLAGS) src/opert.c -o $@
 
 build/src/strings.o: src/strings.c
-		$(CC) -I src $(CFLAGS) src/strings.c -o $@ 
+		$(CC) -std=c99 -I src $(CFLAGS) src/strings.c -o $@ 
 
 $(EXE_TEST): build/test/manip_test.o build/test/strings_test.o build/test/main.o build/src/opert.o build/src/strings.o
 		$(CC) build/test/manip_test.o build/test/strings_test.o build/test/main.o build/src/opert.o build/src/strings.o -o $@

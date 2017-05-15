@@ -6,18 +6,8 @@ int main()
 {
 	char string_input_user[MAX_PATH];
 
-	printf("Enter path: ");
-	input(string_input_user);
-	
-	if (check(string_input_user) == -2) {
-		printf("Symbol limit exceeded!\n");
-	} else if(check(string_input_user) == -1) {
-		printf("Detected forbidden symbols!\n");
-	} else {
-		//printf("Path: %s\n", string_input_user);
-		printf("Updated path: /");
-		process(string_input_user);
-	}
+	printf("Enter path: ");	
+	output(input(string_input_user));
 
 	return 0;
 } 

@@ -11,6 +11,8 @@ all: $(TARGET)
 $(TARGET): $(SRC)
 	$(CC) $(LFLAGS) -o $@ $(SRC)
 
-.PHONY: all clean
+.PHONY: all clean debug
 clean:
 	rm -rf bin/*  
+debug: $(SRC)
+	$(CC) $(LFLAGS) -g -O0 -o $@ $(SRC)

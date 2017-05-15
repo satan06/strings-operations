@@ -29,7 +29,16 @@ int sspn(const char *i_str)
             if ((i_str[i] == f_str[0]) && (i_str[i + 1] == '\\')) {
                 continue;
             }
-            if (i_str[i] == f_str[k]) {
+            if (!('a' <= i_str[0] && i_str[0] <= 'z') || !('A' <= i_str[0] && i_str[0] <= 'Z')) {
+                if (!('a' <= i_str[1] && i_str[1] <= 'z') || !('A' <= i_str[1] && i_str[1] <= 'Z')) {
+                    if (!(i_str[2] == f_str[0]) && !(i_str[3] == '\\')) {
+                        return -2;
+                    }
+                }
+            }
+            if (i_str[i] == f_str[k] || ((i_str[i] == '/') && (i_str[i + 1] == '/')) ) {
+                return -1;
+            } if ((i_str[i] == '\\') && (i_str[i + 1] == '\\'))  {
                 return -1;
             }
         }

@@ -13,7 +13,7 @@ build/src/main.o: src/main.c
 		$(CC) -I src $(CFLAGS) src/main.c -o $@   
 
 build/src/opert.o: src/opert.c
-		$(CC) -I src $(CFLAGS) src/opert.c -o $@
+		$(CC) -std=c99 -I src $(CFLAGS) src/opert.c -o $@
 
 build/src/strings.o: src/strings.c
 		$(CC) -I src $(CFLAGS) src/strings.c -o $@ 

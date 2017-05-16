@@ -31,7 +31,7 @@ char *process(char *string_input)
 
 	if(string_input != NULL) {
 		if(schr(string_input, '/')) {
-			if(schr(string_input, '/') && schr(string_input, '\\') && (sspn_l(string_input) == -1)) {
+			if((schr(string_input, '/') && schr(string_input, '\\')) || (sspn_l(string_input) == -1)) {
 
 				return NULL;
 
@@ -52,7 +52,7 @@ char *process(char *string_input)
     			return string_input;
 			}
 		} else {
- 			if(schr(string_input, '\\') && schr(string_input, '/') && (sspn(string_input) == -2)) {
+ 			if((schr(string_input, '\\') && schr(string_input, '/')) || (sspn(string_input) == -1)) {
 
 				return NULL;
 

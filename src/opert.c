@@ -15,9 +15,9 @@ char *input(char *string_input)
 
 int check(const char *string_input)
 {
-	if (slen(string_input) > MAX_PATH) {
+	if(slen(string_input) > MAX_PATH) {
 		return -2;
-	} else if (sspn(string_input) == -1) {
+	} else if(sspn(string_input) == -1) {
 		return -1;
 	}
 

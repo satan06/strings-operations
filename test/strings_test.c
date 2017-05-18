@@ -81,4 +81,92 @@ CTEST(sspn_test, double_bslash)
     ASSERT_EQUAL(expected, result); 
 }
 
+CTEST(valwin_nme_test, win_AA_disk)
+{
+    const char *str = "AA:\\erhrnb\\wrnbn\\webxvb";
 
+    const char *result = valwin_nme(str);
+
+    ASSERT_NOT_NULL(result); 
+}
+
+CTEST(valwin_nme_test, win_Aa_disk)
+{
+    const char *str = "Aa:\\erhrnb\\wrnbn\\webxvb";
+
+    const char *result = valwin_nme(str);
+
+    ASSERT_NOT_NULL(result); 
+}
+
+CTEST(valwin_nme_test, win_aa_disk)
+{
+    const char *str = "aa:\\erhrnb\\wrnbn\\webxvb";
+
+    const char *result = valwin_nme(str);
+
+    ASSERT_NOT_NULL(result); 
+}
+
+CTEST(valwin_nme_test, win_aA_disk)
+{
+    const char *str = "aA:\\erhrnb\\wrnbn\\webxvb";
+
+    const char *result = valwin_nme(str);
+
+    ASSERT_NOT_NULL(result); 
+}
+
+CTEST(valwin_nme_test, win_A_disk)
+{
+    const char *str = "A:\\erhrnb\\wrnbn\\webxvb";
+
+    const char *result = valwin_nme(str);
+
+    ASSERT_NOT_NULL(result); 
+}
+
+CTEST(valwin_nme_test, win_a_disk)
+{
+    const char *str = "a:\\erhrnb\\wrnbn\\webxvb";
+
+    const char *result = valwin_nme(str);
+
+    ASSERT_NOT_NULL(result); 
+}
+
+CTEST(valwin_nme_test, win_num_disk)
+{
+    const char *str = "4:\\erhrnb\\wrnbn\\webxvb";
+
+    const char *result = valwin_nme(str);
+
+    ASSERT_NULL(result); 
+}
+
+CTEST(valwin_nme_test, win_ch_disk)
+{
+    const char *str = "/:\\erhrnb\\wrnbn\\webxvb";
+
+    const char *result = valwin_nme(str);
+
+    ASSERT_NULL(result); 
+}
+
+CTEST(valwin_nme_test, win_chch_disk)
+{
+    const char *str = "[:\\erhrnb\\wrnbn\\webxvb";
+
+    const char *result = valwin_nme(str);
+
+    ASSERT_NULL(result); 
+}
+
+CTEST(valwin_nme_test, win_chchch_disk)
+{
+    const char *str = "[?:\\erhrnb\\wrnbn\\webxvb";
+
+    const char *result = valwin_nme(str);
+
+    ASSERT_NULL(result); 
+}

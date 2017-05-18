@@ -8,6 +8,6 @@ int sspn_l(const char *i_str);
 char *c_upper(char *i_str);
 char *sstok(char *str, const char *delim); 
 char *scpy(char *n_str, const char *i_str);
-char *valwin_nme(char *str);
+const char *valwin_nme(const char *str);
 
 #endif//STRINGS H

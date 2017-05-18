@@ -104,13 +104,13 @@ char *scpy(char *n_str, const char *i_str)
     return n_str;
 }
 
-char *valwin_nme(char *str)
+const char *valwin_nme(const char *str)
 {
   for(int i = 0; str[i] != '\0'; ++i) {
-    if(('a' <= str[0] && str[0] <= 'z') ||
-      ('a' <= str[1] && str[1] <= 'z') ||
-      ('A' <= str[0] && str[0] <= 'A') ||
-      ('A' <= str[1] && str[1] <= 'Z')) {
+    if(('a' <= str[0] && str[0] <= 'z') || 
+        ('a' <= str[1] && str[1] <= 'z') || 
+        ('A' <= str[0] && str[0] <= 'A') || 
+        ('A' <= str[1] && str[1] <= 'Z')) {
         return str;
     }
   }

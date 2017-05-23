@@ -29,12 +29,9 @@ int sspn(const char *i_str)
             if((i_str[i] == f_str[0]) && (i_str[i + 1] == '\\')) {
                 continue;
             } 
-            if((i_str[i] == '\\') && (i_str[i + 1] == '\\')) {
+            if(((i_str[i] == '\\') && (i_str[i + 1] == '\\')) || (i_str[i] == f_str[k])) {
                 return -1;
             } 
-            if(i_str[i] == f_str[k]) {
-                return -1;
-            }
         }
     }
     return 0;

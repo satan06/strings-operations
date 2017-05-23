@@ -106,7 +106,7 @@ const char *valwin_nme(const char *str)
   for(int i = 0; str[i] != '\0'; ++i) {
     if(('a' <= str[0] && str[0] <= 'z') || 
         ('a' <= str[1] && str[1] <= 'z') || 
-        ('A' <= str[0] && str[0] <= 'A') || 
+        ('A' <= str[0] && str[0] <= 'Z') || 
         ('A' <= str[1] && str[1] <= 'Z')) {
         return str;
     }
